@@ -1,91 +1,139 @@
-// --- DATABASE SOALAN ---
-// Kumpulan 1: Eagle / Autokratik / Pengurusan
-// Kumpulan 2: Owl / Analitikal / STEM
-// Kumpulan 3: Dove / Demokratik / Sosial
-// Kumpulan 4: Peacock / Visionary / Seni
+// --- DATABASE SOALAN (Format 30-30-30 Matriks Berasingan) ---
+// category: "dove", "lead", "work"
+// trait: Kumpulan spesifik untuk pengiraan markah
 const questions = [
-    { group: 1, bm: "Saya fokus kepada hasil berbanding perasaan.", en: "I focus on results more than feelings." },
-    { group: 2, bm: "Saya perlukan semua fakta sebelum membuat keputusan.", en: "I need all the facts before deciding." },
-    { group: 3, bm: "Saya mengelak konflik walau apa cara sekalipun.", en: "I avoid conflict at all costs." },
-    { group: 4, bm: "Saya suka menjadi tumpuan di hadapan orang ramai.", en: "I love being the center of attention in public." },
-    { group: 1, bm: "Saya fokus kepada hasil berbanding perasaan.", en: "I focus on results more than feelings." },
-    { group: 1, bm: "Saya lebih suka memberi arahan daripada menerimanya.", en: "I prefer giving orders than receiving them." },
-    { group: 1, bm: "Saya selesa membuat keputusan yang tidak popular.", en: "I am comfortable making unpopular decisions." },
-    { group: 1, bm: "Saya sasarkan untuk menjadi ketua dalam mana-mana kumpulan.", en: "I aim to be the leader in any group." },
-    { group: 1, bm: "Saya utamakan kecekapan berbanding persetujuan ramai.", en: "I value efficiency over group consensus." },
-    { group: 1, bm: "Jika projek lewat, saya menuntut tindakan segera.", en: "If a project is late, I demand immediate action." },
-    { group: 1, bm: "Semasa krisis, saya mengambil alih tanpa bertanya.", en: "During a crisis, I take control without asking." },
-    { group: 1, bm: "Semasa berunding, saya berjuang untuk menang dalam apa jua keadaan.", en: "When negotiating, I play to win at all costs." },
-    { group: 1, bm: "Jika seseorang buat silap, saya tegur secara berdepan.", en: "If someone makes a mistake, I point it out directly." },
-    { group: 1, bm: "Dalam mesyuarat, saya mencelah jika perbincangan mula tersasar.", en: "In a meeting, I interrupt if we go off-topic." },
-    { group: 1, bm: "Saya didorong oleh kuasa dan pencapaian.", en: "I am driven by power and achievement." },
-    { group: 1, bm: "Saya lebih suka menetapkan matlamat berbanding melaksanakannya.", en: "I prefer setting goals rather than executing them." },
-    { group: 1, bm: "Saya tiada masalah memecat pekerja yang tidak berprestasi.", en: "I can easily fire someone if they underperform." },
-    { group: 1, bm: "Saya tidak kisah dengan konflik jika ia membawa kemajuan.", en: "I don't mind conflicts if it brings progress." },
-    { group: 1, bm: "Saya hanya menghormati pihak atasan yang terbukti cekap.", en: "I respect authority only if they prove their competence." },
+  
+    // Sifat: EAGLE (Dominan, Fokus Hasil)
+    { category: "dove", trait: "eagle", bm: "Saya fokus kepada hasil berbanding perasaan.", en: "I focus on results more than feelings." },
+    { category: "dove", trait: "eagle", bm: "Saya lebih suka mengambil alih dalam situasi kelam-kabut.", en: "I prefer to take charge in a chaotic situation." },
+    { category: "dove", trait: "eagle", bm: "Saya selesa membuat keputusan tidak popular jika ia membawa kejayaan.", en: "I am comfortable making unpopular decisions if it brings success." },
+    { category: "dove", trait: "eagle", bm: "Saya mudah hilang sabar apabila sesuatu bergerak terlalu lambat.", en: "I get impatient when things move too slowly." },
+    { category: "dove", trait: "eagle", bm: "Saya suka mencabar peraturan jika ia tidak masuk akal.", en: "I like to challenge the rules if they don't make sense." },
+    { category: "dove", trait: "eagle", bm: "Saya secara semula jadi kompetitif dan bermain untuk menang.", en: "I am naturally competitive and play to win." },
+    { category: "dove", trait: "eagle", bm: "Saya bercakap secara berterus-terang dan tepat pada maksudnya.", en: "I speak directly and straight to the point." },
+    { category: "dove", trait: "eagle", bm: "Saya lebih suka tindakan berbanding perancangan yang berterusan.", en: "I prefer action over endless planning." },
 
-    // Kumpulan 2: Owl / Analitikal / STEM
-    { group: 2, bm: "Saya perlukan semua fakta sebelum membuat keputusan.", en: "I need all the facts before deciding." },
-    { group: 2, bm: "Saya lebih suka bekerja sendirian menganalisis data.", en: "I prefer working alone analyzing data." },
-    { group: 2, bm: "Saya sangat mementingkan perincian dan teratur.", en: "I am very detail-oriented and organized." },
-    { group: 2, bm: "Saya lebih percayakan logik berbanding naluri.", en: "I trust logic more than intuition." },
-    { group: 2, bm: "Saya sentiasa patuh kepada peraturan dan prosedur.", en: "I always follow strict rules and procedures." },
-    { group: 2, bm: "Jika mesin rosak, saya baca manual untuk membaikinya.", en: "If a machine breaks, I read the manual to fix it." },
-    { group: 2, bm: "Apabila membeli peranti, saya bandingkan semua spesifikasi teknikal.", en: "When buying a device, I compare all technical specs." },
-    { group: 2, bm: "Jika orang berdebat dengan saya, saya minta bukti.", en: "If someone argues with me, I ask for evidence." },
-    { group: 2, bm: "Sebelum bercuti, saya rancang jadual secara terperinci.", en: "Before a trip, I plan the itinerary in detail." },
-    { group: 2, bm: "Semasa berdebat, saya kekal tenang dan fokus pada fakta.", en: "During a debate, I remain calm and stick to facts." },
-    { group: 2, bm: "Saya berasa tenang apabila melihat graf dan nombor.", en: "I find comfort in viewing graphs and numbers." },
-    { group: 2, bm: "Saya elakkan keputusan berdasarkan \"gerak hati\".", en: "I avoid making decisions based on \"gut feeling\"." },
-    { group: 2, bm: "Saya semak tugasan saya berulang kali.", en: "I double-check my work multiple times." },
-    { group: 2, bm: "Saya lebih suka komunikasi bertulis berbanding lisan.", en: "I prefer written communication over verbal." },
-    { group: 2, bm: "Saya seorang yang perfeksionis dalam tugas harian.", en: "I am a perfectionist in my daily tasks." },
+    // Sifat: OWL (Analitikal, Teratur)
+    { category: "dove", trait: "owl", bm: "Saya perlukan semua fakta sebelum membuat keputusan.", en: "I need all the facts before deciding." },
+    { category: "dove", trait: "owl", bm: "Saya menyemak semula kerja saya untuk memastikan tiada kesilapan.", en: "I double-check my work to ensure there are no mistakes." },
+    { category: "dove", trait: "owl", bm: "Saya lebih suka komunikasi bertulis berbanding sembang lisan.", en: "I prefer written communication over verbal chats." },
+    { category: "dove", trait: "owl", bm: "Saya seronok menganalisis data untuk mencari corak tersembunyi.", en: "I enjoy analyzing data to find hidden patterns." },
+    { category: "dove", trait: "owl", bm: "Saya patuh sepenuhnya pada peraturan dan prosedur operasi standard.", en: "I strictly follow rules and standard operating procedures." },
+    { category: "dove", trait: "owl", bm: "Saya berhati-hati dan mengira risiko sebelum bertindak.", en: "I am cautious and calculate risks before acting." },
+    { category: "dove", trait: "owl", bm: "Kualiti dan kesempurnaan lebih penting bagi saya daripada kelajuan.", en: "Quality and perfection are more important to me than speed." },
+    { category: "dove", trait: "owl", bm: "Saya mengawal emosi saya dan sangat bergantung pada logik.", en: "I control my emotions and rely heavily on logic." },
 
-    // Kumpulan 3: Dove / Demokratik / Sosial
-    { group: 3, bm: "Saya mengelak konflik walau apa cara sekalipun.", en: "I avoid conflict at all costs." },
-    { group: 3, bm: "Saya suka membantu orang lain mencapai matlamat mereka.", en: "I love helping others achieve their goals." },
-    { group: 3, bm: "Saya pendengar yang baik dan sangat berempati.", en: "I am a good listener and highly empathetic." },
-    { group: 3, bm: "Saya lebih suka bekerja dalam pasukan yang saling menyokong.", en: "I prefer working in a supportive team." },
-    { group: 3, bm: "Saya letakkan keperluan orang lain mendahului diri saya.", en: "I put others' needs before my own." },
-    { group: 3, bm: "Jika rakan bersedih, saya ketepikan kerja untuk mendengarnya.", en: "If a friend is sad, I set aside work to listen." },
-    { group: 3, bm: "Bila memilih tempat makan, saya ikut keputusan majoriti.", en: "When deciding where to eat, I follow the majority." },
-    { group: 3, bm: "Jika rakan sekerja bergaduh, saya bertindak sebagai pendamai.", en: "If colleagues fight, I act as the peacemaker." },
-    { group: 3, bm: "Dalam projek, saya pastikan semua ahli pasukan selesa.", en: "In a project, I ensure all team members are comfortable." },
-    { group: 3, bm: "Jika menang anugerah, saya berikan kredit kepada seluruh pasukan.", en: "If I win an award, I credit the entire team." },
-    { group: 3, bm: "Saya sangat menghargai kesetiaan dan persahabatan.", en: "I deeply value loyalty and friendships." },
-    { group: 3, bm: "Saya berasa tertekan apabila ada yang meninggikan suara.", en: "I feel stressed when people raise their voices." },
-    { group: 3, bm: "Saya seronok mengajar dan membimbing orang dengan sabar.", en: "I enjoy teaching and guiding others patiently." },
-    { group: 3, bm: "Saya jarang berkata \"tidak\" apabila orang meminta bantuan.", en: "I rarely say \"no\" when someone asks for help." },
-    { group: 3, bm: "Saya mahu diingati sebagai seorang yang baik hati.", en: "I want to be remembered as a kind person." },
+    // Sifat: DOVE (Harmoni, Penyokong)
+    { category: "dove", trait: "dove", bm: "Saya mengelak konflik walau apa cara sekalipun.", en: "I avoid conflict at all costs." },
+    { category: "dove", trait: "dove", bm: "Saya pendengar yang baik apabila seseorang perlu meluahkan perasaan.", en: "I am a good listener when someone needs to vent." },
+    { category: "dove", trait: "dove", bm: "Saya mendahulukan keperluan pasukan saya berbanding diri sendiri.", en: "I put the needs of my team before my own." },
+    { category: "dove", trait: "dove", bm: "Saya berusaha untuk mengekalkan persekitaran yang damai dan stabil.", en: "I strive to maintain a peaceful and stable environment." },
+    { category: "dove", trait: "dove", bm: "Saya berasa tertekan apabila ada orang meninggikan suara.", en: "I feel stressed when people raise their voices." },
+    { category: "dove", trait: "dove", bm: "Saya seronok membantu orang lain membina kemahiran mereka dengan sabar.", en: "I enjoy helping others develop their skills patiently." },
+    { category: "dove", trait: "dove", bm: "Saya menghargai hubungan yang mendalam berbanding sekadar membina rangkaian.", en: "I value deep relationships over just networking." },
 
-    // Kumpulan 4: Peacock / Visionary / Seni
-    { group: 4, bm: "Saya suka menjadi tumpuan di hadapan orang ramai.", en: "I love being the center of attention in public." },
-    { group: 4, bm: "Saya sangat kreatif dan sentiasa penuh dengan idea baharu.", en: "I am highly creative and always full of new ideas." },
-    { group: 4, bm: "Saya lebih suka gaya hidup fleksibel dan spontan.", en: "I prefer a flexible and spontaneous lifestyle." },
-    { group: 4, bm: "Saya memberi inspirasi kepada orang lain dengan semangat saya.", en: "I inspire others with my enthusiasm." },
-    { group: 4, bm: "Saya fokus pada gambaran besar, bukan perincian remeh.", en: "I focus on the big picture, not petty details." },
-    { group: 4, bm: "Di majlis keramaian, saya akan cuba berbual dengan semua orang.", en: "At a social event, I will try to talk to everyone." },
-    { group: 4, bm: "Jika tugas itu bosan, saya akan cari jalan jadikan ia seronok.", en: "If a task is boring, I will find a way to make it fun." },
-    { group: 4, bm: "Semasa membentang idea, saya menggunakan penceritaan yang menarik.", en: "When pitching an idea, I use engaging storytelling." },
-    { group: 4, bm: "Jika peraturan terlalu ketat, saya akan cari jalan melonggarkannya.", en: "If rules are too strict, I will find a way to bend them." },
-    { group: 4, bm: "Dalam sesi perbincangan, saya beri idea yang paling luar biasa.", en: "In a discussion, I give the most out-of-the-box ideas." },
-    { group: 4, bm: "Saya sangat mementingkan penampilan dan gaya fizikal saya.", en: "I care a lot about my physical appearance and style." },
-    { group: 4, bm: "Saya mudah bosan dengan tugasan rutin yang berulang-ulang.", en: "I get easily bored with repetitive routine tasks." },
-    { group: 4, bm: "Saya meluahkan emosi dan perasaan saya secara terbuka.", en: "I express my emotions and feelings openly." },
-    { group: 4, bm: "Saya sangat optimis dan sentiasa memikirkan masa depan.", en: "I am very optimistic and always thinking about the future." },
-    { group: 4, bm: "Saya lebih suka mencipta benda baharu berbanding membaiki yang lama.", en: "I prefer creating something new over fixing something old." }
-// Tambah baki 56 soalan mengikut format di atas
+    // Sifat: PEACOCK (Ekspresif, Sosial)
+    { category: "dove", trait: "peacock", bm: "Saya suka menjadi tumpuan di hadapan orang ramai.", en: "I love being the center of attention in public." },
+    { category: "dove", trait: "peacock", bm: "Saya penuh bertenaga dan mudah teruja dengan idea baharu.", en: "I am full of energy and easily excited by new ideas." },
+    { category: "dove", trait: "peacock", bm: "Saya memujuk dan memberi inspirasi kepada orang lain melalui penceritaan.", en: "I persuade and inspire others through storytelling." },
+    { category: "dove", trait: "peacock", bm: "Saya benci melakukan tugas rutin yang mengehadkan kreativiti saya.", en: "I hate doing routine tasks that limit my creativity." },
+    { category: "dove", trait: "peacock", bm: "Saya mudah memulakan perbualan dengan orang yang tidak dikenali.", en: "I easily strike up conversations with strangers." },
+    { category: "dove", trait: "peacock", bm: "Saya bersikap optimis dan sentiasa melihat dari sudut positif.", en: "I am optimistic and always look on the bright side." },
+    { category: "dove", trait: "peacock", bm: "Saya banyak bergantung pada naluri dan gerak hati saya.", en: "I rely on my intuition and gut feeling a lot." },
+    
+
+    // --- KATEGORI: LEADERSHIP (Gaya Kepimpinan) ---
+   // --- KATEGORI: LEADERSHIP (Gaya Kepimpinan - 30 Soalan) ---
+    // Gaya: AUTOCRATIC (Arahan, Kawalan, Pembuat Keputusan Mutlak)
+    { category: "lead", trait: "autocratic", bm: "Saya lebih suka memberi arahan daripada menerimanya.", en: "I prefer giving orders than receiving them." },
+    { category: "lead", trait: "autocratic", bm: "Saya mengharapkan pasukan mematuhi arahan saya tanpa banyak soal.", en: "I expect the team to follow my orders without much questioning." },
+    { category: "lead", trait: "autocratic", bm: "Apabila krisis melanda, saya akan membuat keputusan secara sendirian.", en: "When a crisis hits, I will make decisions on my own." },
+    { category: "lead", trait: "autocratic", bm: "Saya lebih fokus kepada pencapaian sasaran berbanding keselesaan pekerja.", en: "I focus more on hitting targets than employee comfort." },
+    { category: "lead", trait: "autocratic", bm: "Saya memantau kerja subordinat secara rapat untuk mengelakkan kesilapan.", en: "I closely monitor subordinates' work to avoid mistakes." },
+    { category: "lead", trait: "autocratic", bm: "Saya bertegas dalam melaksanakan hukuman jika ada yang melanggar peraturan.", en: "I am firm in enforcing penalties if rules are broken." },
+    { category: "lead", trait: "autocratic", bm: "Kuasa pemutus mesti berada di tangan ketua, bukan pasukan.", en: "The ultimate decision-making power must lie with the leader, not the team." },
+    { category: "lead", trait: "autocratic", bm: "Saya memimpin dengan menetapkan piawaian yang sangat ketat.", en: "I lead by setting very strict standards." },
+
+    // Gaya: ANALYTICAL (Logik, Data, Perancangan Rapi)
+    { category: "lead", trait: "analytical", bm: "Saya percayakan logik dan data dalam memimpin.", en: "I trust logic and data in leading." },
+    { category: "lead", trait: "analytical", bm: "Saya mahu melihat laporan dan bukti sebelum meluluskan sebarang projek.", en: "I want to see reports and evidence before approving any project." },
+    { category: "lead", trait: "analytical", bm: "Perancangan strategik dan terperinci adalah kunci kepada kepimpinan saya.", en: "Strategic and detailed planning is the key to my leadership." },
+    { category: "lead", trait: "analytical", bm: "Saya menilai prestasi pekerja berdasarkan metrik dan nombor yang objektif.", en: "I evaluate employee performance based on objective metrics and numbers." },
+    { category: "lead", trait: "analytical", bm: "Saya mengambil masa yang secukupnya untuk mengkaji risiko sebelum bertindak.", en: "I take enough time to study risks before acting." },
+    { category: "lead", trait: "analytical", bm: "Saya tidak suka perubahan mendadak tanpa perbincangan berstruktur.", en: "I dislike sudden changes without structured discussions." },
+    { category: "lead", trait: "analytical", bm: "Saya memimpin dengan mewujudkan sistem yang efisien dan boleh diukur.", en: "I lead by creating efficient and measurable systems." },
+    { category: "lead", trait: "analytical", bm: "Setiap masalah dalam organisasi boleh diselesaikan melalui analisis terperinci.", en: "Every problem in the organization can be solved through detailed analysis." },
+
+    // Gaya: DEMOCRATIC (Konsensus, Empati, Kerjasama)
+    { category: "lead", trait: "democratic", bm: "Saya sentiasa meminta pendapat pasukan sebelum bertindak.", en: "I always ask for the team's opinion before acting." },
+    { category: "lead", trait: "democratic", bm: "Keputusan yang dicapai secara undian majoriti adalah yang terbaik.", en: "Decisions reached by majority vote are the best." },
+    { category: "lead", trait: "democratic", bm: "Saya menggalakkan perbincangan terbuka dan ketelusan dalam organisasi.", en: "I encourage open discussion and transparency in the organization." },
+    { category: "lead", trait: "democratic", bm: "Kegagalan pasukan adalah tanggungjawab saya bersama.", en: "The team's failure is my shared responsibility." },
+    { category: "lead", trait: "democratic", bm: "Saya memimpin dengan menjadi fasilitator, bukan sekadar 'boss'.", en: "I lead by being a facilitator, not just a 'boss'." },
+    { category: "lead", trait: "democratic", bm: "Kesejahteraan moral pasukan sangat penting untuk kejayaan.", en: "The team's moral well-being is crucial for success." },
+    { category: "lead", trait: "democratic", bm: "Saya memberi ruang kepada ahli pasukan untuk mencuba dan belajar dari kesilapan.", en: "I give team members space to try and learn from mistakes." },
+
+    // Gaya: VISIONARY (Inovasi, Inspirasi, Gambaran Besar)
+    { category: "lead", trait: "visionary", bm: "Saya suka memikirkan inovasi dan masa depan syarikat.", en: "I like thinking about innovation and the company's future." },
+    { category: "lead", trait: "visionary", bm: "Saya memimpin dengan memberi inspirasi dan menceritakan gambaran besar.", en: "I lead by inspiring and telling the big picture." },
+    { category: "lead", trait: "visionary", bm: "Saya menggalakkan pasukan untuk mengambil risiko bagi mencapai kejayaan.", en: "I encourage the team to take risks to achieve success." },
+    { category: "lead", trait: "visionary", bm: "Saya cepat bosan dengan status quo dan sentiasa mencari pembaharuan.", en: "I get bored quickly with the status quo and always seek renewal." },
+    { category: "lead", trait: "visionary", bm: "Peranan utama ketua adalah untuk membuka jalan dan peluang baharu.", en: "The leader's main role is to pave the way and open new opportunities." },
+    { category: "lead", trait: "visionary", bm: "Saya lebih memikirkan 'apa yang boleh dicapai' berbanding 'bagaimana nak buat'.", en: "I think more about 'what can be achieved' rather than 'how to do it'." },
+    { category: "lead", trait: "visionary", bm: "Saya meletakkan sasaran yang sangat berani dan luar dari kebiasaan.", en: "I set very bold and out-of-the-box targets." },
+    
+
+    // --- KATEGORI: WORK TENDENCY (Kecenderungan Kerja) ---
+    // --- KATEGORI: WORK TENDENCY (Kecenderungan Kerja - 30 Soalan) ---
+    // Kecenderungan: MANAGEMENT (Pengurusan, Perniagaan, Strategi)
+    { category: "work", trait: "management", bm: "Saya mahir menguruskan belanjawan dan operasi.", en: "I am skilled at managing budgets and operations." },
+    { category: "work", trait: "management", bm: "Saya berminat merancang strategi untuk meluaskan pasaran perniagaan.", en: "I am interested in planning strategies to expand business markets." },
+    { category: "work", trait: "management", bm: "Saya suka menyelaraskan projek dan memastikan ia mengikut jadual.", en: "I like coordinating projects and ensuring they are on schedule." },
+    { category: "work", trait: "management", bm: "Menjadi usahawan atau pengarah syarikat adalah cita-cita besar saya.", en: "Becoming an entrepreneur or company director is my big ambition." },
+    { category: "work", trait: "management", bm: "Saya seronok menganalisis keuntungan dan kerugian syarikat.", en: "I enjoy analyzing company profits and losses." },
+    { category: "work", trait: "management", bm: "Saya selesa membentangkan rancangan perniagaan kepada pelabur.", en: "I am comfortable pitching business plans to investors." },
+    { category: "work", trait: "management", bm: "Saya mahir berunding dan memujuk pihak lain untuk bersetuju.", en: "I am skilled at negotiating and persuading others to agree." },
+    { category: "work", trait: "management", bm: "Saya lebih mementingkan produktiviti berbanding tugasan kreatif yang remeh.", en: "I value productivity over trivial creative tasks." },
+
+    // Kecenderungan: STEM (Sains, Teknologi, Kejuruteraan, Matematik)
+    { category: "work", trait: "stem", bm: "Saya seronok menyelesaikan masalah kejuruteraan rumit.", en: "I enjoy solving complex engineering problems." },
+    { category: "work", trait: "stem", bm: "Saya sangat berminat dengan penemuan teknologi terkini atau pengaturcaraan.", en: "I am very interested in the latest tech discoveries or programming." },
+    { category: "work", trait: "stem", bm: "Mengkaji teori sains atau fenomena alam amat menarik minat saya.", en: "Studying scientific theories or natural phenomena greatly interests me." },
+    { category: "work", trait: "stem", bm: "Saya selesa membuat eksperimen di dalam makmal selama berjam-jam.", en: "I am comfortable conducting experiments in a lab for hours." },
+    { category: "work", trait: "stem", bm: "Saya suka membaiki peralatan elektronik atau mekanikal yang rosak.", en: "I like fixing broken electronic or mechanical equipment." },
+    { category: "work", trait: "stem", bm: "Formula matematik yang kompleks tidak menakutkan saya.", en: "Complex mathematical formulas do not scare me." },
+    { category: "work", trait: "stem", bm: "Saya lebih suka membaca jurnal penyelidikan berbanding novel.", en: "I prefer reading research journals over novels." },
+    { category: "work", trait: "stem", bm: "Pekerjaan ideal saya melibatkan analisis data berbanding interaksi sosial.", en: "My ideal job involves data analysis rather than social interaction." },
+
+    // Kecenderungan: SOCIAL (Khidmat Masyarakat, Pendidikan, Kesihatan)
+    { category: "work", trait: "social", bm: "Saya lebih gembira bekerja dalam bidang khidmat masyarakat.", en: "I am happier working in social services." },
+    { category: "work", trait: "social", bm: "Saya berasa puas apabila dapat merawat atau menjaga orang yang sakit.", en: "I feel fulfilled when I can treat or care for the sick." },
+    { category: "work", trait: "social", bm: "Kerjaya sebagai pendidik atau kaunselor sangat sesuai dengan jiwa saya.", en: "A career as an educator or counselor suits my soul perfectly." },
+    { category: "work", trait: "social", bm: "Saya sanggup bekerja di kawasan pendalaman untuk membantu mereka yang memerlukan.", en: "I am willing to work in rural areas to help those in need." },
+    { category: "work", trait: "social", bm: "Memahami tingkah laku dan psikologi manusia adalah minat utama saya.", en: "Understanding human behavior and psychology is my main interest." },
+    { category: "work", trait: "social", bm: "Pekerjaan saya mesti memberi impak positif yang langsung kepada masyarakat.", en: "My job must have a direct positive impact on society." },
+    { category: "work", trait: "social", bm: "Saya lebih suka bekerja secara rapat dengan orang ramai setiap hari.", en: "I prefer working closely with people every day." },
+
+    // Kecenderungan: ART (Seni, Komunikasi, Kreativiti)
+    { category: "work", trait: "art", bm: "Saya lebih suka kerja yang memerlukan kreativiti bebas.", en: "I prefer work that requires free creativity." },
+    { category: "work", trait: "art", bm: "Mereka bentuk grafik, fesyen, atau hiasan dalaman sangat mengujakan saya.", en: "Designing graphics, fashion, or interiors highly excites me." },
+    { category: "work", trait: "art", bm: "Saya berbakat dalam bidang penulisan, lakonan, atau pengacaraan.", en: "I am talented in writing, acting, or hosting." },
+    { category: "work", trait: "art", bm: "Mencipta muzik atau kandungan media sosial adalah kepakaran saya.", en: "Creating music or social media content is my expertise." },
+    { category: "work", trait: "art", bm: "Saya sangat peka terhadap estetika dan nilai seni dalam sesuatu produk.", en: "I am highly sensitive to the aesthetics and artistic value of a product." },
+    { category: "work", trait: "art", bm: "Kerja yang terlalu berstruktur dan rutin akan membunuh semangat saya.", en: "Work that is too structured and routine will kill my spirit." },
+    { category: "work", trait: "art", bm: "Saya mahu kerjaya yang membolehkan saya mengekspresikan diri sepenuhnya.", en: "I want a career that allows me to express myself fully." }
+    // Tambah baki 26 soalan WORK TENDENCY di sini...
 ];
 
 let currentLang = 'bm';
 let currentQuestionIndex = 0;
-let scores = { group1: 0, group2: 0, group3: 0, group4: 0 };
-let answerHistory = []; // Simpan rekod jawapan untuk fungsi Back
+let answerHistory = [];
 let timerInterval;
 let timeLeft = 10;
-let myChart = null; // Variable untuk Spider Chart
+let myChart = null;
 
-// --- FUNGSI BAHASA ---
+// --- FUNGSI BAHASA & LOGIN ---
+// (Kekalkan fungsi sama macam sebelum ini)
 function toggleLanguage() {
     currentLang = currentLang === 'bm' ? 'en' : 'bm';
     updateUIText();
@@ -100,7 +148,6 @@ function updateUIText() {
     });
 }
 
-// --- FUNGSI LOGIN ---
 function checkLogin() {
     const pass = document.getElementById('password').value;
     if (pass === 'abc123') {
@@ -112,11 +159,11 @@ function checkLogin() {
     }
 }
 
-// --- FUNGSI UJIAN ---
+// --- FUNGSI UJIAN & TIMER ---
 function startQuiz() {
-    questions.sort(() => Math.random() - 0.5); // Rawak soalan
+    questions.sort(() => Math.random() - 0.5); // Rawak semua 90 soalan
     currentQuestionIndex = 0;
-    answerHistory = []; // Reset sejarah jawapan
+    answerHistory = [];
     showQuestion();
 }
 
@@ -132,13 +179,10 @@ function showQuestion() {
         ? `Soalan ${currentQuestionIndex + 1} / ${questions.length}` 
         : `Question ${currentQuestionIndex + 1} / ${questions.length}`;
 
-    // Tunjuk butang 'Back' hanya jika bukan soalan pertama
     document.getElementById('btnBack').style.display = currentQuestionIndex > 0 ? 'inline-block' : 'none';
-
     resetTimer();
 }
 
-// --- FUNGSI TIMER ---
 function resetTimer() {
     clearInterval(timerInterval);
     timeLeft = 10;
@@ -155,72 +199,83 @@ function resetTimer() {
     }, 1000);
 }
 
-// --- FUNGSI JAWAPAN ---
 function answerQuestion(isAgree) {
     clearInterval(timerInterval);
-    answerHistory[currentQuestionIndex] = isAgree; // Simpan jawapan dalam history
+    answerHistory[currentQuestionIndex] = isAgree;
     currentQuestionIndex++;
     showQuestion();
 }
 
-// --- FUNGSI UNDUR (BACK) ---
 function goBack() {
     if (currentQuestionIndex > 0) {
         clearInterval(timerInterval);
-        currentQuestionIndex--; // Undur 1 soalan
+        currentQuestionIndex--;
         showQuestion();
     }
 }
 
-// --- FUNGSI KEPUTUSAN AKHIR & SPIDER CHART ---
+// --- FUNGSI KEPUTUSAN AKHIR (MATRIKS BERASINGAN) ---
 function endQuiz() {
     document.getElementById('quizScreen').classList.remove('active');
     document.getElementById('resultScreen').classList.add('active');
 
-    // Pengiraan markah berdasarkan answerHistory
-    scores = { group1: 0, group2: 0, group3: 0, group4: 0 };
+    // 1. Sediakan objek pemarkahan kosong
+    let scores = {
+        dove: { eagle: 0, owl: 0, dove: 0, peacock: 0 },
+        lead: { autocratic: 0, analytical: 0, democratic: 0, visionary: 0 },
+        work: { management: 0, stem: 0, social: 0, art: 0 }
+    };
+
+    // 2. Kira markah berdasarkan sejarah jawapan dan kategori soalan
     for (let i = 0; i < answerHistory.length; i++) {
         if (answerHistory[i] === true) {
-            let group = questions[i].group;
-            scores[`group${group}`]++;
+            let cat = questions[i].category;
+            let trait = questions[i].trait;
+            scores[cat][trait]++;
         }
     }
 
-    // Analisis Keputusan Teks
-    let highestGroup = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
-    let resDove, resLead, resWork;
-    if (highestGroup === 'group1') { resDove = "Eagle"; resLead = "Autocratic"; resWork = "Management/Business"; }
-    else if (highestGroup === 'group2') { resDove = "Owl"; resLead = "Analytical"; resWork = "STEM/Technical"; }
-    else if (highestGroup === 'group3') { resDove = "Dove"; resLead = "Democratic"; resWork = "Social/Education"; }
-    else { resDove = "Peacock"; resLead = "Visionary"; resWork = "Art/Communication"; }
+    // 3. Tentukan pemenang (Trait tertinggi) untuk setiap kategori
+    const getHighestTrait = (categoryScores) => {
+        return Object.keys(categoryScores).reduce((a, b) => categoryScores[a] > categoryScores[b] ? a : b);
+    };
 
-    document.getElementById('resDove').innerText = resDove;
-    document.getElementById('resLeadership').innerText = resLead;
-    document.getElementById('resWork').innerText = resWork;
+    let topDove = getHighestTrait(scores.dove);
+    let topLead = getHighestTrait(scores.lead);
+    let topWork = getHighestTrait(scores.work);
 
-    // Lukis Spiderweb Chart
-    drawSpiderChart();
+    // 4. Paparkan ke skrin (Format teks untuk kesesuaian BM/EN boleh dilaraskan)
+    document.getElementById('resDove').innerText = topDove.toUpperCase();
+    document.getElementById('resLeadership').innerText = topLead.toUpperCase();
+    document.getElementById('resWork').innerText = topWork.toUpperCase();
+
+    // 5. Lukis Spider Chart
+    drawSpiderChart(scores);
 }
 
-function drawSpiderChart() {
+// --- FUNGSI SPIDER CHART UNTUK DOVE ---
+function drawSpiderChart(scores) {
     const ctx = document.getElementById('spiderChart').getContext('2d');
     
-    // Clear graf lama jika user ambil test kali kedua
     if (myChart !== null) { myChart.destroy(); }
 
     myChart = new Chart(ctx, {
         type: 'radar',
         data: {
-            labels: ['Eagle (Dominant)', 'Owl (Analytical)', 'Dove (Harmony)', 'Peacock (Expressive)'],
+            // Label khusus untuk DOVE
+            labels: ['EAGLE', 'OWL', 'DOVE', 'PEACOCK'],
             datasets: [{
-                label: 'DOVE Profiling Score',
-                data: [scores.group1, scores.group2, scores.group3, scores.group4],
-                backgroundColor: 'rgba(242, 169, 0, 0.4)', // UniKL Yellow (Transparent)
-                borderColor: '#F2A900', // UniKL Yellow
-                pointBackgroundColor: '#1B2956', // UniKL Navy Blue
-                pointBorderColor: '#fff',
-                pointHoverBackgroundColor: '#fff',
-                pointHoverBorderColor: '#1B2956'
+                label: 'Skor Personaliti DOVE',
+                data: [
+                    scores.dove.eagle, 
+                    scores.dove.owl, 
+                    scores.dove.dove, 
+                    scores.dove.peacock
+                ],
+                backgroundColor: 'rgba(242, 169, 0, 0.4)', // UniKL Yellow
+                borderColor: '#F2A900',
+                pointBackgroundColor: '#1B2956',
+                pointBorderColor: '#fff'
             }]
         },
         options: {
@@ -228,12 +283,12 @@ function drawSpiderChart() {
                 r: {
                     angleLines: { display: true },
                     suggestedMin: 0,
-                    suggestedMax: 15 // Maksimum soalan untuk setiap kategori
+                    suggestedMax: 8 // Anggaran 30 soalan / 4 ciri = ~7.5 soalan setiap ciri
                 }
             }
         }
     });
 }
 
-// Initialize setup
+// Initialize
 updateUIText();
