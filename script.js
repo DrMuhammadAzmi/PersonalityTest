@@ -80,8 +80,10 @@ const questions = [
 let currentLang = 'bm';
 let currentQuestionIndex = 0;
 let scores = { group1: 0, group2: 0, group3: 0, group4: 0 };
+let answerHistory = []; // Simpan rekod jawapan untuk fungsi Back
 let timerInterval;
 let timeLeft = 10;
+let myChart = null; // Variable untuk Spider Chart
 
 // --- FUNGSI BAHASA ---
 function toggleLanguage() {
@@ -112,9 +114,9 @@ function checkLogin() {
 
 // --- FUNGSI UJIAN ---
 function startQuiz() {
-    // Rawakkan soalan (Randomizer)
-    questions.sort(() => Math.random() - 0.5);
+    questions.sort(() => Math.random() - 0.5); // Rawak soalan
     currentQuestionIndex = 0;
+    answerHistory = []; // Reset sejarah jawapan
     showQuestion();
 }
 
@@ -130,10 +132,13 @@ function showQuestion() {
         ? `Soalan ${currentQuestionIndex + 1} / ${questions.length}` 
         : `Question ${currentQuestionIndex + 1} / ${questions.length}`;
 
+    // Tunjuk butang 'Back' hanya jika bukan soalan pertama
+    document.getElementById('btnBack').style.display = currentQuestionIndex > 0 ? 'inline-block' : 'none';
+
     resetTimer();
 }
 
-// --- FUNGSI TIMER (10 SAAT) ---
+// --- FUNGSI TIMER ---
 function resetTimer() {
     clearInterval(timerInterval);
     timeLeft = 10;
@@ -145,32 +150,44 @@ function resetTimer() {
         
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
-            answerQuestion(false); // Auto-skip jika masa tamat (Markah = 0)
+            answerQuestion(false); 
         }
     }, 1000);
 }
 
-// --- FUNGSI JAWAPAN & KIRAAN ---
+// --- FUNGSI JAWAPAN ---
 function answerQuestion(isAgree) {
     clearInterval(timerInterval);
-    
-    if (isAgree) {
-        let group = questions[currentQuestionIndex].group;
-        scores[`group${group}`]++;
-    }
-
+    answerHistory[currentQuestionIndex] = isAgree; // Simpan jawapan dalam history
     currentQuestionIndex++;
     showQuestion();
 }
 
-// --- FUNGSI KEPUTUSAN AKHIR ---
+// --- FUNGSI UNDUR (BACK) ---
+function goBack() {
+    if (currentQuestionIndex > 0) {
+        clearInterval(timerInterval);
+        currentQuestionIndex--; // Undur 1 soalan
+        showQuestion();
+    }
+}
+
+// --- FUNGSI KEPUTUSAN AKHIR & SPIDER CHART ---
 function endQuiz() {
     document.getElementById('quizScreen').classList.remove('active');
     document.getElementById('resultScreen').classList.add('active');
 
-    // Analisis Matriks Tertinggi
-    let highestGroup = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+    // Pengiraan markah berdasarkan answerHistory
+    scores = { group1: 0, group2: 0, group3: 0, group4: 0 };
+    for (let i = 0; i < answerHistory.length; i++) {
+        if (answerHistory[i] === true) {
+            let group = questions[i].group;
+            scores[`group${group}`]++;
+        }
+    }
 
+    // Analisis Keputusan Teks
+    let highestGroup = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
     let resDove, resLead, resWork;
     if (highestGroup === 'group1') { resDove = "Eagle"; resLead = "Autocratic"; resWork = "Management/Business"; }
     else if (highestGroup === 'group2') { resDove = "Owl"; resLead = "Analytical"; resWork = "STEM/Technical"; }
@@ -180,6 +197,42 @@ function endQuiz() {
     document.getElementById('resDove').innerText = resDove;
     document.getElementById('resLeadership').innerText = resLead;
     document.getElementById('resWork').innerText = resWork;
+
+    // Lukis Spiderweb Chart
+    drawSpiderChart();
+}
+
+function drawSpiderChart() {
+    const ctx = document.getElementById('spiderChart').getContext('2d');
+    
+    // Clear graf lama jika user ambil test kali kedua
+    if (myChart !== null) { myChart.destroy(); }
+
+    myChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ['Eagle (Dominant)', 'Owl (Analytical)', 'Dove (Harmony)', 'Peacock (Expressive)'],
+            datasets: [{
+                label: 'DOVE Profiling Score',
+                data: [scores.group1, scores.group2, scores.group3, scores.group4],
+                backgroundColor: 'rgba(242, 169, 0, 0.4)', // UniKL Yellow (Transparent)
+                borderColor: '#F2A900', // UniKL Yellow
+                pointBackgroundColor: '#1B2956', // UniKL Navy Blue
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: '#1B2956'
+            }]
+        },
+        options: {
+            scales: {
+                r: {
+                    angleLines: { display: true },
+                    suggestedMin: 0,
+                    suggestedMax: 15 // Maksimum soalan untuk setiap kategori
+                }
+            }
+        }
+    });
 }
 
 // Initialize setup
