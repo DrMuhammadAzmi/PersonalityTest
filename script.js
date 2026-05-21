@@ -221,7 +221,7 @@ function endQuiz() {
 
     // 1. Sediakan objek pemarkahan kosong
     let scores = {
-        dove: { eagle: 0, owl: 0, dove: 0, peacock: 0 },
+        dope: { eagle: 0, owl: 0, dove: 0, peacock: 0 },
         lead: { autocratic: 0, analytical: 0, democratic: 0, visionary: 0 },
         work: { management: 0, stem: 0, social: 0, art: 0 }
     };
@@ -240,12 +240,12 @@ function endQuiz() {
         return Object.keys(categoryScores).reduce((a, b) => categoryScores[a] > categoryScores[b] ? a : b);
     };
 
-    let topDove = getHighestTrait(scores.dove);
+    let topDope = getHighestTrait(scores.dope);
     let topLead = getHighestTrait(scores.lead);
     let topWork = getHighestTrait(scores.work);
 
     // 4. Paparkan ke skrin (Format teks untuk kesesuaian BM/EN boleh dilaraskan)
-    document.getElementById('resDove').innerText = topDove.toUpperCase();
+    document.getElementById('resDope').innerText = topDope.toUpperCase();
     document.getElementById('resLeadership').innerText = topLead.toUpperCase();
     document.getElementById('resWork').innerText = topWork.toUpperCase();
 
@@ -253,7 +253,7 @@ function endQuiz() {
     drawSpiderChart(scores);
 }
 
-// --- FUNGSI SPIDER CHART UNTUK DOVE ---
+// --- FUNGSI SPIDER CHART UNTUK DOPE ---
 function drawSpiderChart(scores) {
     const ctx = document.getElementById('spiderChart').getContext('2d');
     
@@ -262,15 +262,15 @@ function drawSpiderChart(scores) {
     myChart = new Chart(ctx, {
         type: 'radar',
         data: {
-            // Label khusus untuk DOVE
+            // Label khusus untuk DOPE
             labels: ['EAGLE', 'OWL', 'DOVE', 'PEACOCK'],
             datasets: [{
-                label: 'Skor Personaliti DOVE',
+                label: 'Skor Personaliti DOPE',
                 data: [
-                    scores.dove.eagle, 
-                    scores.dove.owl, 
-                    scores.dove.dove, 
-                    scores.dove.peacock
+                    scores.dope.eagle, 
+                    scores.dope.owl, 
+                    scores.dope.dove, 
+                    scores.dope.peacock
                 ],
                 backgroundColor: 'rgba(242, 169, 0, 0.4)', // UniKL Yellow
                 borderColor: '#F2A900',
