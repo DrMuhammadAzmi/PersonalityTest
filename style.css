@@ -1,1 +1,96 @@
+:root {
+    --primary-navy: #1B2956;    /* UniKL Navy Blue */
+    --accent-yellow: #F2A900;   /* UniKL Golden Yellow */
+    --bg-light: #F0F4F8;        /* Light Blue/Grey */
+    --white: #FFFFFF;
+}
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--primary-navy);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    background-color: var(--primary-navy);
+    color: var(--white);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+header h2 { margin: 0; font-size: 1.2rem; }
+
+#langToggle {
+    background-color: var(--accent-yellow);
+    color: var(--primary-navy);
+    border: none;
+    padding: 8px 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.screen {
+    display: none;
+    width: 90%;
+    max-width: 600px;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-top: 40px;
+    text-align: center;
+}
+
+.screen.active { display: block; }
+
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: var(--primary-navy);
+    color: var(--white);
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.options button { width: 48%; margin: 10px 1%; }
+.btn-agree { background-color: var(--accent-yellow); color: var(--primary-navy); font-weight: bold; }
+
+/* Timer Bar */
+#timerContainer {
+    width: 100%;
+    background-color: #ddd;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#timerBar {
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-yellow);
+    transition: width 1s linear;
+}
+
+.highlight { color: var(--accent-yellow); font-weight: bold; font-size: 1.5rem; }
