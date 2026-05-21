@@ -1,45 +1,45 @@
 // --- DATABASE SOALAN (Format 30-30-30 Matriks Berasingan) ---
-// category: "dove", "lead", "work"
+// category: "dope", "lead", "work"
 // trait: Kumpulan spesifik untuk pengiraan markah
 const questions = [
   
     // Sifat: EAGLE (Dominan, Fokus Hasil)
-    { category: "dove", trait: "eagle", bm: "Saya fokus kepada hasil berbanding perasaan.", en: "I focus on results more than feelings." },
-    { category: "dove", trait: "eagle", bm: "Saya lebih suka mengambil alih dalam situasi kelam-kabut.", en: "I prefer to take charge in a chaotic situation." },
-    { category: "dove", trait: "eagle", bm: "Saya selesa membuat keputusan tidak popular jika ia membawa kejayaan.", en: "I am comfortable making unpopular decisions if it brings success." },
-    { category: "dove", trait: "eagle", bm: "Saya mudah hilang sabar apabila sesuatu bergerak terlalu lambat.", en: "I get impatient when things move too slowly." },
-    { category: "dove", trait: "eagle", bm: "Saya suka mencabar peraturan jika ia tidak masuk akal.", en: "I like to challenge the rules if they don't make sense." },
-    { category: "dove", trait: "eagle", bm: "Saya secara semula jadi kompetitif dan bermain untuk menang.", en: "I am naturally competitive and play to win." },
-    { category: "dove", trait: "eagle", bm: "Saya bercakap secara berterus-terang dan tepat pada maksudnya.", en: "I speak directly and straight to the point." },
-    { category: "dove", trait: "eagle", bm: "Saya lebih suka tindakan berbanding perancangan yang berterusan.", en: "I prefer action over endless planning." },
+    { category: "dope", trait: "eagle", bm: "Saya fokus kepada hasil berbanding perasaan.", en: "I focus on results more than feelings." },
+    { category: "dope", trait: "eagle", bm: "Saya lebih suka mengambil alih dalam situasi kelam-kabut.", en: "I prefer to take charge in a chaotic situation." },
+    { category: "dope", trait: "eagle", bm: "Saya selesa membuat keputusan tidak popular jika ia membawa kejayaan.", en: "I am comfortable making unpopular decisions if it brings success." },
+    { category: "dope", trait: "eagle", bm: "Saya mudah hilang sabar apabila sesuatu bergerak terlalu lambat.", en: "I get impatient when things move too slowly." },
+    { category: "dope", trait: "eagle", bm: "Saya suka mencabar peraturan jika ia tidak masuk akal.", en: "I like to challenge the rules if they don't make sense." },
+    { category: "dope", trait: "eagle", bm: "Saya secara semula jadi kompetitif dan bermain untuk menang.", en: "I am naturally competitive and play to win." },
+    { category: "dope", trait: "eagle", bm: "Saya bercakap secara berterus-terang dan tepat pada maksudnya.", en: "I speak directly and straight to the point." },
+    { category: "dope", trait: "eagle", bm: "Saya lebih suka tindakan berbanding perancangan yang berterusan.", en: "I prefer action over endless planning." },
 
     // Sifat: OWL (Analitikal, Teratur)
-    { category: "dove", trait: "owl", bm: "Saya perlukan semua fakta sebelum membuat keputusan.", en: "I need all the facts before deciding." },
-    { category: "dove", trait: "owl", bm: "Saya menyemak semula kerja saya untuk memastikan tiada kesilapan.", en: "I double-check my work to ensure there are no mistakes." },
-    { category: "dove", trait: "owl", bm: "Saya lebih suka komunikasi bertulis berbanding sembang lisan.", en: "I prefer written communication over verbal chats." },
-    { category: "dove", trait: "owl", bm: "Saya seronok menganalisis data untuk mencari corak tersembunyi.", en: "I enjoy analyzing data to find hidden patterns." },
-    { category: "dove", trait: "owl", bm: "Saya patuh sepenuhnya pada peraturan dan prosedur operasi standard.", en: "I strictly follow rules and standard operating procedures." },
-    { category: "dove", trait: "owl", bm: "Saya berhati-hati dan mengira risiko sebelum bertindak.", en: "I am cautious and calculate risks before acting." },
-    { category: "dove", trait: "owl", bm: "Kualiti dan kesempurnaan lebih penting bagi saya daripada kelajuan.", en: "Quality and perfection are more important to me than speed." },
-    { category: "dove", trait: "owl", bm: "Saya mengawal emosi saya dan sangat bergantung pada logik.", en: "I control my emotions and rely heavily on logic." },
+    { category: "dope", trait: "owl", bm: "Saya perlukan semua fakta sebelum membuat keputusan.", en: "I need all the facts before deciding." },
+    { category: "dope", trait: "owl", bm: "Saya menyemak semula kerja saya untuk memastikan tiada kesilapan.", en: "I double-check my work to ensure there are no mistakes." },
+    { category: "dope", trait: "owl", bm: "Saya lebih suka komunikasi bertulis berbanding sembang lisan.", en: "I prefer written communication over verbal chats." },
+    { category: "dope", trait: "owl", bm: "Saya seronok menganalisis data untuk mencari corak tersembunyi.", en: "I enjoy analyzing data to find hidden patterns." },
+    { category: "dope", trait: "owl", bm: "Saya patuh sepenuhnya pada peraturan dan prosedur operasi standard.", en: "I strictly follow rules and standard operating procedures." },
+    { category: "dope", trait: "owl", bm: "Saya berhati-hati dan mengira risiko sebelum bertindak.", en: "I am cautious and calculate risks before acting." },
+    { category: "dope", trait: "owl", bm: "Kualiti dan kesempurnaan lebih penting bagi saya daripada kelajuan.", en: "Quality and perfection are more important to me than speed." },
+    { category: "dope", trait: "owl", bm: "Saya mengawal emosi saya dan sangat bergantung pada logik.", en: "I control my emotions and rely heavily on logic." },
 
     // Sifat: DOVE (Harmoni, Penyokong)
-    { category: "dove", trait: "dove", bm: "Saya mengelak konflik walau apa cara sekalipun.", en: "I avoid conflict at all costs." },
-    { category: "dove", trait: "dove", bm: "Saya pendengar yang baik apabila seseorang perlu meluahkan perasaan.", en: "I am a good listener when someone needs to vent." },
-    { category: "dove", trait: "dove", bm: "Saya mendahulukan keperluan pasukan saya berbanding diri sendiri.", en: "I put the needs of my team before my own." },
-    { category: "dove", trait: "dove", bm: "Saya berusaha untuk mengekalkan persekitaran yang damai dan stabil.", en: "I strive to maintain a peaceful and stable environment." },
-    { category: "dove", trait: "dove", bm: "Saya berasa tertekan apabila ada orang meninggikan suara.", en: "I feel stressed when people raise their voices." },
-    { category: "dove", trait: "dove", bm: "Saya seronok membantu orang lain membina kemahiran mereka dengan sabar.", en: "I enjoy helping others develop their skills patiently." },
-    { category: "dove", trait: "dove", bm: "Saya menghargai hubungan yang mendalam berbanding sekadar membina rangkaian.", en: "I value deep relationships over just networking." },
+    { category: "dope", trait: "dove", bm: "Saya mengelak konflik walau apa cara sekalipun.", en: "I avoid conflict at all costs." },
+    { category: "dope", trait: "dove", bm: "Saya pendengar yang baik apabila seseorang perlu meluahkan perasaan.", en: "I am a good listener when someone needs to vent." },
+    { category: "dope", trait: "dove", bm: "Saya mendahulukan keperluan pasukan saya berbanding diri sendiri.", en: "I put the needs of my team before my own." },
+    { category: "dope", trait: "dove", bm: "Saya berusaha untuk mengekalkan persekitaran yang damai dan stabil.", en: "I strive to maintain a peaceful and stable environment." },
+    { category: "dope", trait: "dove", bm: "Saya berasa tertekan apabila ada orang meninggikan suara.", en: "I feel stressed when people raise their voices." },
+    { category: "dope", trait: "dove", bm: "Saya seronok membantu orang lain membina kemahiran mereka dengan sabar.", en: "I enjoy helping others develop their skills patiently." },
+    { category: "dope", trait: "dove", bm: "Saya menghargai hubungan yang mendalam berbanding sekadar membina rangkaian.", en: "I value deep relationships over just networking." },
 
     // Sifat: PEACOCK (Ekspresif, Sosial)
-    { category: "dove", trait: "peacock", bm: "Saya suka menjadi tumpuan di hadapan orang ramai.", en: "I love being the center of attention in public." },
-    { category: "dove", trait: "peacock", bm: "Saya penuh bertenaga dan mudah teruja dengan idea baharu.", en: "I am full of energy and easily excited by new ideas." },
-    { category: "dove", trait: "peacock", bm: "Saya memujuk dan memberi inspirasi kepada orang lain melalui penceritaan.", en: "I persuade and inspire others through storytelling." },
-    { category: "dove", trait: "peacock", bm: "Saya benci melakukan tugas rutin yang mengehadkan kreativiti saya.", en: "I hate doing routine tasks that limit my creativity." },
-    { category: "dove", trait: "peacock", bm: "Saya mudah memulakan perbualan dengan orang yang tidak dikenali.", en: "I easily strike up conversations with strangers." },
-    { category: "dove", trait: "peacock", bm: "Saya bersikap optimis dan sentiasa melihat dari sudut positif.", en: "I am optimistic and always look on the bright side." },
-    { category: "dove", trait: "peacock", bm: "Saya banyak bergantung pada naluri dan gerak hati saya.", en: "I rely on my intuition and gut feeling a lot." },
+    { category: "dope", trait: "peacock", bm: "Saya suka menjadi tumpuan di hadapan orang ramai.", en: "I love being the center of attention in public." },
+    { category: "dope", trait: "peacock", bm: "Saya penuh bertenaga dan mudah teruja dengan idea baharu.", en: "I am full of energy and easily excited by new ideas." },
+    { category: "dope", trait: "peacock", bm: "Saya memujuk dan memberi inspirasi kepada orang lain melalui penceritaan.", en: "I persuade and inspire others through storytelling." },
+    { category: "dope", trait: "peacock", bm: "Saya benci melakukan tugas rutin yang mengehadkan kreativiti saya.", en: "I hate doing routine tasks that limit my creativity." },
+    { category: "dope", trait: "peacock", bm: "Saya mudah memulakan perbualan dengan orang yang tidak dikenali.", en: "I easily strike up conversations with strangers." },
+    { category: "dope", trait: "peacock", bm: "Saya bersikap optimis dan sentiasa melihat dari sudut positif.", en: "I am optimistic and always look on the bright side." },
+    { category: "dope", trait: "peacock", bm: "Saya banyak bergantung pada naluri dan gerak hati saya.", en: "I rely on my intuition and gut feeling a lot." },
     
 
     // --- KATEGORI: LEADERSHIP (Gaya Kepimpinan) ---
