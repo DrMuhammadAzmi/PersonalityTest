@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profiling Test</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -32,6 +33,7 @@
                 <button onclick="answerQuestion(true)" class="btn-agree" id="btnAgree" data-bm="Setuju" data-en="Agree">Setuju</button>
                 <button onclick="answerQuestion(false)" class="btn-disagree" id="btnDisagree" data-bm="Tidak Setuju" data-en="Disagree">Tidak Setuju</button>
             </div>
+            <button onclick="goBack()" id="btnBack" style="background-color: #ccc; color: #333; margin-top: 20px; display: none;" data-bm="Kembali" data-en="Back">Kembali</button>
         </section>
 
         <section id="resultScreen" class="screen">
@@ -40,6 +42,10 @@
                 <h3>DOVE Personality: <span id="resDove" class="highlight"></span></h3>
                 <h3>Leadership Style: <span id="resLeadership" class="highlight"></span></h3>
                 <h3>Work Tendency: <span id="resWork" class="highlight"></span></h3>
+            </div>
+            
+            <div style="margin-top: 30px; width: 100%; max-width: 400px; margin-left: auto; margin-right: auto;">
+                <canvas id="spiderChart"></canvas>
             </div>
         </section>
     </main>
