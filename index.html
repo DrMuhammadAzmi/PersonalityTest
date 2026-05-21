@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profiling Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h2 id="logoText">UniKL Profiling Test</h2>
+        <button id="langToggle" onclick="toggleLanguage()">EN / BM</button>
+    </header>
 
+    <main>
+        <section id="loginScreen" class="screen active">
+            <h1 id="loginTitle" data-bm="Log Masuk" data-en="Login">Log Masuk</h1>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password (abc123)" required>
+            <button onclick="checkLogin()" id="loginBtn" data-bm="Mula Ujian" data-en="Start Test">Mula Ujian</button>
+            <p id="loginError" style="color: red; display: none;" data-bm="Kata laluan salah!" data-en="Wrong password!"></p>
+        </section>
+
+        <section id="quizScreen" class="screen">
+            <div id="timerContainer">
+                <div id="timerBar"></div>
+            </div>
+            <p id="questionCounter">Soalan 1 / 60</p>
+            <h2 id="questionText">Soalan akan dipaparkan di sini</h2>
+            
+            <div class="options">
+                <button onclick="answerQuestion(true)" class="btn-agree" id="btnAgree" data-bm="Setuju" data-en="Agree">Setuju</button>
+                <button onclick="answerQuestion(false)" class="btn-disagree" id="btnDisagree" data-bm="Tidak Setuju" data-en="Disagree">Tidak Setuju</button>
+            </div>
+        </section>
+
+        <section id="resultScreen" class="screen">
+            <h1 id="resultTitle" data-bm="Keputusan Anda" data-en="Your Results">Keputusan Anda</h1>
+            <div class="result-card">
+                <h3>DOVE Personality: <span id="resDove" class="highlight"></span></h3>
+                <h3>Leadership Style: <span id="resLeadership" class="highlight"></span></h3>
+                <h3>Work Tendency: <span id="resWork" class="highlight"></span></h3>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
